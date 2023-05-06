@@ -1,0 +1,68 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.form-control{
+	border:0;
+	height:50px;
+	border-radius:0;
+border-bottom:1px solid #ebebeb;	
+}
+.container {
+    margin-top: 70px;
+    //top: 100px;
+}
+
+.form-control:focus{
+    border-bottom-width: 2px;
+    border-color: blue;
+}
+.form-control{
+    height: 40px;
+    width: 400px;
+    outline: none;
+    padding: 0 15px;
+    border: 1px solid#CACACA;
+    //PPPPP
+		
+}
+.control-label{
+    height: 70px;
+    font-size: 15px;
+}
+.az{
+    height: 50px;
+    
+
+}
+.ae{
+    height: 50px;
+    color: rgb(179, 179, 179);
+    font-size: medium;
+}
+.btn{
+    height: 40px;
+    width: 400px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(78, 78, 255);
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+}
+.left{
+    left: 0;
+	width: 50%;
+	z-index: 2;
+}
+.right-side{
+    margin-top: 140px;
+    position: absolute;
+	top: 0;
+	left: 50%;
+	width: 50%;
+	height: 100%;
+}
+button{
+    height:50px;	
+    }

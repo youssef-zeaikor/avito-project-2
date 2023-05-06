@@ -1,0 +1,93 @@
+// Place all the styles related to the Articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+  margin: 20px;
+  max-width: 80%;
+}
+
+.container_article {
+  white-space: nowrap; /* Prevents line breaks */
+  white-space: pre-wrap;
+}
+
+.box {
+  display: inline-block; /* Display boxes inline */
+  //   width: 100px; /* Set the width of each box */
+  //   height: 100px; /* Set the height of each box */
+  background-color: #ccc; /* Set the background color of each box */
+  margin-right: 20px; /* Add some spacing between boxes */
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  margin: 20px;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+// -----------------------------------------------------------------details---------
+.product {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.product img {
+  width: 200px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-title {
+  font-size: 24px;
+  margin: 0 0 10px;
+}
+
+.product-description {
+  font-size: 16px;
+  margin: 0 0 20px;
+}
+
+.product-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.product-details li {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.product-details li strong {
+  font-weight: bold;
+  margin-right: 10px;
+}
