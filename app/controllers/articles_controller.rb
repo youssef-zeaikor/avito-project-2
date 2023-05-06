@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(params.require(:article).permit(:title,:description,:article_type,:image_url,:price,:etat,:annee_modele,:orgine,:premiere_main,:marque,:nombre_portes,:modele,:kilometrage,:ville))
      if @article.save
+        flash[:notice] = "Article was created successfuly."
         redirect_to articles_path("detail/#{@article.id}")
      else
          render 'new'
