@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2023_05_05_152833) do
 
   create_table "articles", force: :cascade do |t|
-    t.string "type"
+    t.string "article_type"
     t.string "title"
     t.text "description"
     t.text "image_url"

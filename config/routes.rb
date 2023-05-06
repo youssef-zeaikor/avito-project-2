@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
   
-  get 'articles/show'
-  get 'articles/detail/:id', to: 'articles#detail'
+  resources :articles ,only: [:index,:new,:create]
+  root 'articles#index'
+  # post 'articles' => 'articles#create'
+  get '/detail/:id', to: 'articles#detail'
+  
   get 'users/new'
-  root 'pages#home'
+  get 'pages/home'
   get '/home', to: 'pages#home'
 
   get 'inscription' => 'users#new'

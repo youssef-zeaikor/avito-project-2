@@ -2,42 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
-    font-size: 62.5%;
-    font-family: 'Roboto', sans-serif;
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-.header{
-    position: fixed;
-    top: 0; left: 0; right: 0;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 
-    border-bottom: 1px solid #E2E8F0;
-    background-color: white;
-    //background: transparent;
+  border-bottom: 1px solid #e2e8f0;
+  background-color: white;
+  //background: transparent;
 }
-.dropdown{
-    
-        overflow: hidden;
-        
+.dropdown {
+  overflow: hidden;
 }
-.dropdown-toggle{
-    font-size: 16px;
+.dropdown-toggle {
+  font-size: 16px;
   border: none;
   outline: none;
   color: rgb(26, 26, 26);
@@ -47,108 +47,104 @@ a {
   margin: 0;
 }
 .dropdown-menu {
-    display: none;
-    position: absolute;
-    //background-color: #f9f9f9;
-    background-color: #ffffff;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 9px;
-  }
-  .dropdown-menu a {
-    float: none;
-    color: rgb(43, 43, 43);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-    font-size: 15px;
-    
-  }
-  .x:focus{
-    background-color: rgb(124, 123, 123);
-    
-    color: #1600a7;
-  }
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
+  display: none;
+  position: absolute;
+  //background-color: #f9f9f9;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 9px;
+}
+.dropdown-menu a {
+  float: none;
+  color: rgb(43, 43, 43);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 15px;
+}
+.x:focus {
+  background-color: rgb(124, 123, 123);
 
-
-.navbar {
-    //position: fixed;
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-    height: 70px;
+  color: #1600a7;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 
+.navbar {
+  //position: fixed;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  height: 70px;
+}
 
 .hamburger {
-    display: none;
+  display: none;
 }
 
 .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: #101010;
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
 }
 
 .nav-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 100px;
 }
 
 .nav-item {
-    margin-left: 5rem;
+  margin-left: 5rem;
 }
 
-.nav-link{
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: #475569;
+.nav-link {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #475569;
 }
 
-.nav-button button{
-    background: #03a546ec;
-    border: none;
-    border-radius: 25px;
-    color: snow; // Vanilla HTML color name
-    height: 40px;
-    cursor: pointer;
-    font-size: 1.25em;
-    letter-spacing: .1em;
-    outline: none;
-    padding: .75em 2em;
-    position: relative; // Required for pseudo-element positioning
-    text-transform: uppercase;
+.nav-button button {
+  background: #03a546ec;
+  border: none;
+  border-radius: 25px;
+  color: snow; // Vanilla HTML color name
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.25em;
+  letter-spacing: 0.1em;
+  outline: none;
+  padding: 0.75em 2em;
+  position: relative; // Required for pseudo-element positioning
+  text-transform: uppercase;
 }
 
-.nav-link:hover{
-    color: #482ff7;
+.nav-link:hover {
+  color: #482ff7;
 }
 
 .nav-logo {
-    //font-size: 2.1rem;
-   // font-weight: 500;
-   // color: #482ff7;
-   display: inline-block; /* to keep the logo aligned with the navigation links */
-    padding: 10px; /* adjust as needed */
-    margin-left: 100px;
+  //font-size: 2.1rem;
+  // font-weight: 500;
+  // color: #482ff7;
+  display: inline-block; /* to keep the logo aligned with the navigation links */
+  padding: 10px; /* adjust as needed */
+  margin-left: 100px;
 }
 
-
 .nav-logo img {
-    height: 60px; 
-    margin-right: 10px;
-    vertical-align: middle; 
-  }
+  height: 60px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
