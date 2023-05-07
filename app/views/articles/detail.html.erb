@@ -20,8 +20,8 @@
     </ul>
     <div class="user-details">
   <p class="username"><%= @article.user.nom%></p>
-  <p class="phone">phone</p>
-  <p class="city">ville</p>
+  <p class="phone"><%= @article.user.tele if @article.user%></p>
+  <p class="city"><%= @article.user.ville if @article.user%></p>
 </div>
 
   </div>

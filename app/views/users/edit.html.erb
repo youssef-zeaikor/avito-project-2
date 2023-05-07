@@ -1,0 +1,132 @@
+<header class="header">
+        <nav class="navbar">
+          
+            <div href="#" class="nav-logo">
+                <%= link_to 'home', class: "navbar-brand" do %>
+                <%= image_tag "/assets/avito-logo.PNG", alt: "Company Logo" %>
+                <% end %>
+            </div>
+
+            <ul class="nav-menu">
+<!--$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$-->
+<% if logged_in? %>
+
+      	<li><%= link_to "Users",	users_path %></li>
+      	<li class="dropdown">
+        	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Compte <span class="caret"></span></a>
+
+          	<ul class="dropdown-menu">
+            	<li><%= link_to "Profile", user_path(user_courant) %></li>
+            	<li><%= link_to "Paramètres", edit_user_path(user_courant) %></li>
+            	<li role="separator" class="divider"></li>
+            	<li><%= link_to "Se déconnecter", logout_path, method: "delete" %></li>
+          	</ul>
+      	</li>
+
+    	<% else %>
+      	<li style="font-size:150px; "><%= link_to "Se connecter", login_path %></li>
+    	<% end %>
+<!--$$$$$$$$$$$$$$$$$$$$$$$$$"#>-->
+                
+                <li class="nav-button">
+                   <!--<button href="#" class="nav-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                                         <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+                        </svg>
+                    <h5> Déposer une annone</h5>
+                    </button>-->
+                    <button href="#">+ DEPOSER UNE ANNONCE</button>
+                </li>
+
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+          
+        </nav>
+</header>
+<!-- ********************-->
+<div class="container">
+
+<div class="left">
+<!--<%= image_tag "/assets/avito-logo.PNG", alt: "Company Logo" %>-->
+<img src="/assets/login_img.PNG" class="img-fluid" style="min-height:100%;" />
+</div>
+
+<div class="right-side">
+<div class="az">
+<h1 class="pb-3" style="margin-buttom: 100px;">Edit Your Profile</h1>
+</div>
+<div class="ae">
+<p class="pb-3" >Entrez vos coordonnées ci-dessous</p>
+</div>
+<%= form_with model: @user do |f| %>
+
+<div class="form-group">
+        		<div class="col-sm-2 control-label">
+                  
+        		  <%= f.label :Nom %>
+        		
+        		    <div class="col-sm-4">
+        	  	    <%= f.text_field :nom, class:"form-control",  placeholder:"Entrer votre nom"%>
+        		    </div>
+        	    </div>
+                <div class="col-sm-2 control-label">
+                  
+        	        <%= f.label :"E-mail" %>
+        		
+        		    <div class="col-sm-4">
+        	    	<%= f.email_field :email, class:"form-control",  placeholder:"Entrer votre mail"%>
+        		    </div>
+        	    </div>
+                <div class="col-sm-2 control-label">
+                  
+        		    <%= f.label :Téléphone %>
+        		
+        		    <div class="col-sm-4">
+        	  	    <%= f.text_field :tele, class:"form-control",  placeholder:"Entrer votre num de tele"%>
+        		    </div>
+                </div>
+        	  
+        		<div class="col-sm-2 control-label">
+        		    <%= f.label :"Mots de passe" %>
+        		
+        		    <div class="col-sm-4">
+        	  	    <%= f.password_field :password , class:"form-control",  placeholder:"Entrer votre password"%>
+        		    </div>
+        	    </div>
+              
+        		<div class="col-sm-2 control-label">
+        		    <%= f.label :"Confirmer le mots de passe" %>
+        		
+        		    <div class="col-sm-4">
+        	  	    <%= f.password_field :password_confirmation , class:"form-control",  placeholder:"Entrer votre password"%>
+        		    </div>
+        	    </div>
+                <div class="col-sm-2 control-label">
+                  
+        		    <%= f.label :Ville %>
+        		
+        		    <div class="col-sm-4">
+        	  	    <%= f.text_field :ville, class:"form-control",  placeholder:"Entrer votre ville"%>
+        		    </div>
+        	    </div>
+ 
+        	  
+        		<div class="col-sm-offset-2 col-sm-4">
+        	  	<%= f.submit "UPDATE ACCOUNT", class: "btn btn-primary" %>
+        		</div>
+        	  
+ </div> 
+ <!--form group
+-->
+	<% end %>
+ </div>
+ <!--right side
+-->
+	</div>
+    
+
+
