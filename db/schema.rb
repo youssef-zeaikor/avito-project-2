@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_06_183345) do
+ActiveRecord::Schema.define(version: 2023_05_07_100811) do
 
   create_table "articles", force: :cascade do |t|
     t.string "article_type"
@@ -32,14 +32,7 @@ ActiveRecord::Schema.define(version: 2023_05_06_183345) do
     t.integer "user_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "nom"
-    t.string "email", null: false
-    t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "tele"
-    t.string "ville"
-  end
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'avatar' for column 'has_one_attached'
 
 end
