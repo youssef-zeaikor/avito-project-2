@@ -31,7 +31,7 @@
                 <li class="x"><%= link_to "Mes annonces", user_path(user_courant) %></li>
             	<li class="x"><%= link_to "Réglages", edit_user_path(user_courant) %></li>
             	<li role="separator" class="divider"></li>
-            	<li class="x"><%= link_to "Se déconnecter", logout_path, method: "delete" %></li>
+            	<li class="x"><%= link_to "Se déconnecter", logout_path, method: :delete %></li>
           	</ul>
       	</li>
 
@@ -49,6 +49,14 @@
           
         </nav>
 </header>
+
+<% if flash[:notice] %>
+  <div class="alert alert-success">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+
     <div class="container">
     <!--$$$$$$$$$$$$$$$$$$$$$$$$$"#>-->
       <% flash.each do |name, msg|%>

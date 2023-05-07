@@ -19,7 +19,7 @@
             	<li><%= link_to "Profile", user_path(user_courant) %></li>
             	<li><%= link_to "Paramètres", edit_user_path(user_courant) %></li>
             	<li role="separator" class="divider"></li>
-            	<li><%= link_to "Se déconnecter", logout_path, method: "delete" %></li>
+            	<li><%= link_to "Se déconnecter", logout_path, method: :delete %></li>
           	</ul>
       	</li>
 
@@ -113,6 +113,7 @@
         	  	    <%= f.text_field :ville, class:"form-control",  placeholder:"Entrer votre ville"%>
         		    </div>
         	    </div>
+
         		<div class="col-sm-offset-2 col-sm-4">
         	  	<%= f.submit "CEER UN COMPTE", class: "btn btn-primary" %>
         		</div>

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :articles ,only: [:index,:new,:create]
+  resources :articles ,only: [:index,:new,:create,:edit,:update]
   root 'articles#index'
   # post 'articles' => 'articles#create'
   get '/detail/:id', to: 'articles#detail'
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
+  
 
   resources :users
 
