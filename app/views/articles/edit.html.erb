@@ -1,4 +1,5 @@
-<h1>Create a new article</h1>
+<div style="max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px; background-color: #f1f1f1;">
+<h1 style="font-size: 4rem; margin-bottom: 3rem;">update the article</h1>
 <% if @article.errors.any?%>
   <h3>there's some errors</h3>
   <ul>
@@ -9,76 +10,83 @@
 <%end%>
 
 <%= form_with(model:@article,local:true) do |form| %>
- <div class="form-group">
-    <%= form.label :article_type %>
-    <%= form.text_field :article_type, class: "form-control" %>
+ <div  class="form-group" style="margin-bottom: 1rem;" >
+    <%= form.label :article_type , style: "margin-bottom: 1.5rem; display: block;" %>
+    <%= form.text_field :article_type, class: "form-control", style: "width: 100%;"  %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: "form-control" %>
+  <div class="form-group" style="margin-bottom: 20px;">
+    <%= form.label :title, style: "display: block; margin-bottom: 1.5rem;" %>
+    <%= form.text_field :title, class: "form-control", style: "width: 100%; height: 40px; border: 1px solid #ccc; border-radius: 5px; padding: 10px;" %>
+</div>
+
+<div class="form-group" style="margin-bottom: 20px;">
+    <%= form.label :description, style: "display: block; margin-bottom: 1.5rem;" %>
+    <%= form.text_area :description, class: "form-control", style: "width: 100%; height: 150px; border: 1px solid #ccc; border-radius: 5px; padding: 10px;" %>
+</div>
+
+
+
+ <div class="form-group" style="margin-bottom: 10px;">
+    <%= form.label :image_url, style: "display: block; font-weight: bold; margin-bottom: 1.5rem;" %>
+    <%= form.text_area :image_url, class: "form-control", style: "height: 100px;" %>
+</div>
+
+<div class="form-group" style="margin-bottom: 10px;">
+    <%= form.label :price, style: "display: block; font-weight: bold; margin-bottom: 1.5rem;" %>
+    <%= form.text_field :price, class: "form-control", style: "width: 100px;" %>
+</div>
+
+<div class="form-group" style="margin-bottom: 10px;">
+    <%= form.label :etat, style: "display: block; font-weight: bold; margin-bottom: 1.5rem;" %>
+    <%= form.number_field :etat, class: "form-control", style: "width: 100px;" %>
+</div>
+
+
+  <div class="form-group" style="margin-bottom: 20px;">
+  <%= form.label :annee_modele, style: "display: block; margin-bottom: 1.5rem;" %>
+  <%= form.number_field :annee_modele, class: "form-control", style: "width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;" %>
+</div>
+
+<div class="form-group" style="margin-bottom: 20px;">
+  <%= form.label :orgine, style: "display: block; margin-bottom: 1.5rem;" %>
+  <%= form.text_area :orgine, class: "form-control", style: "width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;" %>
+</div>
+
+<div class="form-group" style="margin-bottom: 20px;">
+  <%= form.label :premiere_main, style: "display: block; margin-bottom: 1.5rem;" %>
+  <%= form.check_box :premiere_main, class: "form-check-input", style: "margin-top: 10px; margin-bottom: 10px;" %>
+</div>
+
+
+  <div class="form-group" style="margin-bottom: 10px;">
+    <%= form.label :marque, style: "font-weight: bold;" %>
+    <%= form.text_field :marque, class: "form-control", style: "width: 100%; padding: 5px 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :description %>
-    <%= form.text_area :description, class: "form-control" %>
+  <div class="form-group" style="margin-bottom: 10px;">
+    <%= form.label :nombre_portes, style: "font-weight: bold;" %>
+    <%= form.number_field :nombre_portes, class: "form-control", style: "width: 100%; padding: 5px 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :image_url %>
-    <%= form.text_area :image_url, class: "form-control" %>
+  <div class="form-group" style="margin-bottom: 10px;">
+    <%= form.label :modele, style: "font-weight: bold;" %>
+    <%= form.number_field :modele, class: "form-control", style: "width: 100%; padding: 5px 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :price %>
-    <%= form.text_field :price, class: "form-control" %>
-  </div>
 
   <div class="form-group">
-    <%= form.label :etat %>
-    <%= form.number_field :etat, class: "form-control" %>
-  </div>
+    <%= form.label :kilometrage, style: "font-weight: bold;" %>
+    <%= form.number_field :kilometrage, class: "form-control", style: "padding: 5px; border: 1px solid #ccc;" %>
+</div>
 
-  <div class="form-group">
-    <%= form.label :annee_modele %>
-    <%= form.number_field :annee_modele, class: "form-control" %>
-  </div>
+<div class="form-group">
+    <%= form.label :ville, style: "font-weight: bold;" %>
+    <%= form.text_field :ville, class: "form-control", style: "padding: 5px; border: 1px solid #ccc;" %>
+</div>
 
-  <div class="form-group">
-    <%= form.label :orgine %>
-    <%= form.text_area :orgine, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :premiere_main %>
-<h1>Edit Article</h1>
-    <%= form.check_box :premiere_main, class: "form-check-input" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :marque %>
-    <%= form.text_field :marque, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :nombre_portes %>
-    <%= form.number_field :nombre_portes, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :modele %>
-    <%= form.number_field :modele, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :kilometrage %>
-    <%= form.number_field :kilometrage, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :ville %>
-    <%= form.text_field :ville, class: "form-control" %>
-  </div>
 
   <%= form.submit%>
 <%end%>
+
+</div>

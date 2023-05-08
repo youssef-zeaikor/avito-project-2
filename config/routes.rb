@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   
-  resources :articles ,only: [:index,:new,:create,:edit,:update]
   root 'articles#index'
-  # post 'articles' => 'articles#create'
   get '/detail/:id', to: 'articles#detail'
+  
+  resources :articles 
+  # post 'articles' => 'articles#create'
   
   get 'users/new'
   get 'pages/home'
@@ -17,6 +18,9 @@ Rails.application.routes.draw do
   
 
   resources :users
+
+
+  
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

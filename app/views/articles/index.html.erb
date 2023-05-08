@@ -1,4 +1,3 @@
-
 <div class="container_article">
     <% @articles.each do |article| %>
         <div class="card box">
@@ -6,9 +5,9 @@
             <h1><%= article.title %></h1>
             <p><%= article.description %></p>
             <p class="price"><%= article.price %></p>
-            <p><button id="myButton"><%= link_to "Article detail", "detail/#{article.id}" %></button></p>
+            <p><button id="myButton" ><%= link_to "Article detail","detail/#{article.id}" %></button></p>
         </div>
     <% end %>
  </div>
 
-
+    
