@@ -1,21 +1,32 @@
-<h1><%= @user.nom %></h1>
-<p>City: <%= @user.ville %></p>
 
-<h1>your Articles</h1>
-<div class="container_article">
-    <% @articles.each do |article| %>
-        <div class="card box">
-            <img src="/assets/image1.jpeg" alt="Denim Jeans" style="width:100%">
-            <h1><%= article.title %></h1>
-            <p><%= article.description %></p>
-            <p class="price"><%= article.price %></p>
-            <p><button id="myButton"><%= link_to "see details", articles_path("article/detail/#{article.id}") %></button></p>
 
-        </div>
+<% if @user.articles.count != 0 %>
+<div  id="user-info" class="card box" style="border: 1px solid black; padding: 10px; width: 40%; margin: auto ; position: absolute; top: 28%; left: 49%; transform: translate(-50%, -50%);">
+  <h1 style="color: blue;"><%= @user.nom %></h1>
+  <p style="color: green;">City: <%= @user.ville %></p>
+  <p style="color: gray;">number of articles: <%= pluralize(@user.articles.count, "article") %></p>
+  <p style="color: navy;">Joined: <%= time_ago_in_words(@user.created_at) %></p>
+
+</div>
+  <h1>your Articles</h1>
+<div class="container_article" style="margin-top: 100px;">
+    <% @user.articles.each do |article| %>
+      <div class="card box">
+        <img src="/assets/image1.jpeg" alt="Denim Jeans" style="width:100%">
+        <h1><%= article.title %></h1>
+        <p><%= article.description %></p>
+        <p class="price"><%= article.price %></p>
+        <p><button id="myButton"><%= link_to "see details", articles_path("article/detail/#{article.id}") %></button></p>
+      </div>
     <% end %>
- </div>
+  </div>
+<% else %>
+  <div class="card box" style="border: 1px solid black; padding: 10px;">
+    <h1 style="color: blue;"><%= @user.nom %></h1>
+    <p style="color: green;">City: <%= @user.ville %></p>
+    <h1 style="color: red;">No articles found.</h1>
+    <p style="color: gray;">number of articles: <%= pluralize(@user.articles.count, "article") %></p>
+    <p style="color: navy;">Joined: <%= time_ago_in_words(@user.created_at) %></p>
 
-
-
-<p>number of articles: <%= pluralize(@user.articles.count,"article") %></p>
-<p>Joined: <%= time_ago_in_words(@user.created_at) %></p>
+  </div>
+<% end %>

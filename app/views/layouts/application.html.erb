@@ -8,7 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
      
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%# <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %> %>
   </head>
 
   <body>
@@ -32,7 +31,8 @@
                 <li class="x"><%= link_to "Mes annonces", user_path(user_courant) %></li>
             	<li class="x"><%= link_to "Réglages", edit_user_path(user_courant) %></li>
             	<li role="separator" class="divider"></li>
-            	<li class="x"><%= link_to "Se déconnecter", logout_path, method: :delete %></li>
+            	<li class="x"><%= link_to "Se déconnecter", logout_path(), method: "delete" %></li>
+              <li><%if user_courant %><%= link_to "View your article", user_path(user_courant.id) %><%end%></li>
           	</ul>
       	</li>
 
@@ -52,19 +52,39 @@
 </header>
 
 <% if flash[:notice] %>
-  <div class="alert alert-success">
+  <div id="alert" class="alert alert-success">
     <%= flash[:notice] %>
   </div>
+  <script>
+    setTimeout(function() {
+      document.getElementById("alert").style.display = "none";
+    }, 1000);
+  </script>
 <% end %>
 
 
-    <div class="container">
-    <!--$$$$$$$$$$$$$$$$$$$$$$$$$"#>-->
-      <% flash.each do |name, msg|%>
-        <%= msg%>
-      <%end%>
-<!--$$$$$$$$$$$$$$$$$$$$$$$$$"#>-->
+<div class="root-class">
     <%= yield %>
+</div>
+
+
+
+<footer >
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <div>
+      <h3>About Us</h3>
+      <p>We offer a seamless shopping experience, with secure payment options and fast, reliable shipping.</p>
     </div>
+    <div>
+      <h3>Connect with Us</h3>
+      <div style="display: flex;">
+        <a href="#" style="color: #fff; margin-right: 10px;"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" style="color: #fff; margin-right: 10px;"><i class="fab fa-twitter"></i></a>
+        <a href="#" style="color: #fff; margin-right: 10px;"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
   </body>
 </html>

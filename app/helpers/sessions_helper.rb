@@ -12,6 +12,7 @@ module SessionsHelper
     def logged_in?
             ! user_courant.nil?
     end
+    
     def log_out
         session.delete(:user_id)
         @user_courant = nil

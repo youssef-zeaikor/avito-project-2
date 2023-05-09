@@ -10,7 +10,12 @@ class ArticlesController < ApplicationController
 
   def new 
     @article = Article.new
-    
+    if session[:user_id]
+      @user =  User.find(session[:user_id])
+    else
+      nil
+    end
+
   end
   
   def create
@@ -49,3 +54,11 @@ class ArticlesController < ApplicationController
   end
 
 
+
+  
+  def require_login
+    unless current_user
+      flash[:error] = "You must be logged in to access this section"
+      redirect_to new_user_session_path
+    end
+  end
